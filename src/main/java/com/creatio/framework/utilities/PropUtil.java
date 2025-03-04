@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-public class ReadProp {
+public class PropUtil {
 	
 	
 	public static Properties readData(String fileName) {
