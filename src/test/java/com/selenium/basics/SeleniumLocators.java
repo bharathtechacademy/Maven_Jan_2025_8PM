@@ -15,9 +15,12 @@ public class SeleniumLocators {
 //		4. tagName
 //		5. linkText
 //		6. partialLinkText
+		
 //		7. cssSelector
 //		8. xpath
 //		9. RelativeLocator		
+		
+		
 		
 
 	}
