@@ -7,8 +7,7 @@ import java.util.Set;
 
 public class ForEachLoop {
 
-	// for each loop ==> extended for loop ==> It will be used to iterate multiple
-	// values available in pre-defined list
+	// for each loop ==> extended for loop ==> It will be used to iterate multiple values available in pre-defined list
 	
 //	for( datatype variable: list) {
 //		

@@ -6,14 +6,23 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 
 public class BrowserActions {
 
 	public static void main(String[] args) {
 		
-//		1. Launch the Browser window (Browser = Chrome)    
-		WebDriver driver = new ChromeDriver();
+//		1. Launch the Browser window (Browser = Chrome)
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--incognito");
+		options.addArguments("--window-size=1920,1080");
+		options.addArguments("--lang=en-US");
+		options.addArguments("--disable-notifications");
+		options.addArguments("--allow-notifications");
+		options.addArguments("--ignore-certificate-error");
+		
+		WebDriver driver = new ChromeDriver(options);
 		
 //		2. Minimize browser window     
 		driver.manage().window().minimize();
