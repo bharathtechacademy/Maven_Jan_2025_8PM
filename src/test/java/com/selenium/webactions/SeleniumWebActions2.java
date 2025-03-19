@@ -3,9 +3,11 @@ package com.selenium.webactions;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -54,20 +56,26 @@ public class SeleniumWebActions2 {
 		selectDOB("1","February","1991");
 						
 		//11.Search and Select Computer Science
+		selectSubject("Computer Science");
 						
 		//12.Select Hobbies as Sports and Reading
-						
+		String [] hobbies = {"Sports", "Reading"};
+		selectHobbies(hobbies);
+		
 		//13.Upload photo
-						
-		//14. Wait till window open to upload the file
-						
-		//15. Upload file
-						
+		//14. Wait till window open to upload the file		
+		//15. Upload file								
 		//16. Wait till file upload 
+		String filePath = System.getProperty("user.dir")+"\\Files\\Mar 29.png";
+		uploadPhoto(filePath);		
 						
 		//17.Submit Details
+		WebElement submitButton = driver.findElement(By.xpath("//button[@id='submit']"));
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click()", submitButton);	
 						
 		//18. Close browser window		
+		driver.quit();
 
 	}
 	
@@ -99,6 +107,40 @@ public class SeleniumWebActions2 {
 		WebElement dateText = driver.findElement(By.xpath("//div[text()='"+date+"' and contains(@aria-label,'"+month+"')]"));
 		dateText.click();
 		
+	}
+	
+	public static void selectSubject(String subjectName) {
+		WebElement subjects = driver.findElement(By.xpath("//div[contains(@class,'subjects-auto-complete__value')]"));
+		
+		//scroll down to element
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView()", subjects);	
+		
+		// Enter input values
+		Actions actions = new Actions(driver);
+		actions.sendKeys(subjects, subjectName).perform();
+		
+		//Wait until the suggestion is getting displayed
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//div[text()='"+subjectName+"' and contains(@class,'option')]"), 0));
+		
+		// Select the option
+		WebElement suggestion = driver.findElement(By.xpath("//div[text()='"+subjectName+"' and contains(@class,'option')]"));
+		suggestion.click();
+	}
+	
+	public static void selectHobbies(String [] hobbies) {
+		for(String hobby : hobbies) {
+			WebElement element = driver.findElement(By.xpath("//label[text()='"+hobby+"']"));
+			if(!element.isSelected()) {
+				element.click();
+			}
+		}
+	}
+	
+	public static void uploadPhoto(String filePath) {
+		WebElement uploadPhoto = driver.findElement(By.xpath("//input[@id='uploadPicture']"));
+		uploadPhoto.sendKeys(filePath);
 	}
 
 }
