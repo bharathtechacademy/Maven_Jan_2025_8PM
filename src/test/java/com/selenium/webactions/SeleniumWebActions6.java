@@ -21,13 +21,20 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class SeleniumWebActions6 {
 	
-	ExtentHtmlReporter html = null; //white paper	
-	ExtentReports extent = null; // printer
-	ExtentTest logger = null; // ink
+	static ExtentHtmlReporter html = null; //white paper	
+	static ExtentReports extent = null; // printer
+	static ExtentTest logger = null; // ink
 
 	static WebDriver driver = null;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+		
+		html = new ExtentHtmlReporter(System.getProperty("user.dir")+"\\Reports\\AutomationTestReport.html"); //empty html report
+		extent = new ExtentReports();
+		extent.attachReporter(html); //attach empty report into extent reports class to print
+		
+		//start the printing process for specific test case
+		logger = extent.createTest("Verify Application Logo And Caption");
 
 		// 1. Launch browser window(Chrome)
 		driver = new ChromeDriver();
@@ -41,26 +48,38 @@ public class SeleniumWebActions6 {
 		// 4. Enter URL and Launch the application
 		// (https://parabank.parasoft.com/parabank/index.htm)
 		driver.get("https://parabank.parasoft.com/parabank/index.htm");
+		logger.info("Application Launched Successfully");
 
 		// 5. Verify application title (ParaBank | Welcome | Online Banking)
 		String actualTitle = driver.getTitle();
 		String expTitle = "ParaBank | Welcome | Online Banking";
 		Assert.assertEquals(actualTitle, expTitle);
+		logger.info("Application title is matching");
 
 		// 6. Verify application logo
 		WebElement logo = driver.findElement(By.xpath("//img[@class='logo']"));
 		Assert.assertTrue(logo.isDisplayed());
-		takeElementScreenshot(logo,"logo.png");
+		logger.pass("Application logo displayed Successfully");
+		logger.addScreenCaptureFromPath(takeElementScreenshot(logo,"logo.png"));		
 		
 		// 7. Verify application caption (Experience the difference)
 		WebElement caption = driver.findElement(By.xpath("//p[@class='caption']"));
 		String actualCaption =caption.getText();
 		String expCaption = "Experience the difference";
 		Assert.assertEquals(actualCaption, expCaption);
+		logger.pass("Application caption displayed Successfully");
+		
+		//stop printing for test case 1
+		extent.flush();
+		
+		
+		//start printing  for test case 2
+		logger = extent.createTest("Verify Application Login");
 		
 		// 8. Enter Invalid credentials in Username and Password textboxes
 		WebElement username = driver.findElement(By.xpath("//input[@name='username']"));
 		WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
+		
 		
 		//clear textboxes
 		username.clear();
@@ -69,6 +88,7 @@ public class SeleniumWebActions6 {
 		//Type credentials
 		username.sendKeys("Invalid Username");
 		password.sendKeys("  ");
+		logger.info("User credentials are updated");
 		
 		// 9. Verify button label (LOG IN) and Click on Login Button
 		WebElement loginButton = driver.findElement(By.xpath("//input[@type='submit']"));
@@ -80,6 +100,7 @@ public class SeleniumWebActions6 {
 		
 		//Click on the login button
 		loginButton.click();
+		logger.info("Clicked on the login button");
 		
 		//wait for error message
 		//Thread.sleep(5000);
@@ -88,9 +109,13 @@ public class SeleniumWebActions6 {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//p[@class='error']"), 0));
 		
-		WebElement error = driver.findElement(By.xpath("//p[@class='error']"));
+		WebElement error = driver.findElement(By.xpath("//p[@class='error']"));		
 		Assert.assertTrue(error.isDisplayed());	
-		takeWindowScreenshot(driver, "Window.png");
+		logger.error("Login is failed");
+		logger.addScreenCaptureFromPath(takeWindowScreenshot(driver, "Window.png"));
+		
+		//stop printing for test case 2
+		extent.flush();		
 
 	}
 	
