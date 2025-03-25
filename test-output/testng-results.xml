@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+<testng-results ignored="0" total="12" passed="10" failed="1" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-24T21:21:42 IST" name="Suite" finished-at="2025-03-24T21:21:42 IST" duration-ms="55">
+  <suite started-at="2025-03-25T21:00:59 IST" name="Suite" finished-at="2025-03-25T21:01:01 IST" duration-ms="2121">
     <groups>
+      <group name="Sanity">
+        <method signature="AppCommons.TestCase2()[pri:2, instance:com.framework.testng.concepts.AppCommons@564fabc8]" name="TestCase2" class="com.framework.testng.concepts.AppCommons"/>
+        <method signature="AppCommons.TestCase3(java.lang.String,java.lang.String)[pri:-1, instance:com.framework.testng.concepts.AppCommons@564fabc8]" name="TestCase3" class="com.framework.testng.concepts.AppCommons"/>
+      </group> <!-- Sanity -->
+      <group name="Regression">
+        <method signature="AppCommons.TestCase1()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" name="TestCase1" class="com.framework.testng.concepts.AppCommons"/>
+        <method signature="AppCommons.TestCase2()[pri:2, instance:com.framework.testng.concepts.AppCommons@564fabc8]" name="TestCase2" class="com.framework.testng.concepts.AppCommons"/>
+        <method signature="AppCommons.TestCase3(java.lang.String,java.lang.String)[pri:-1, instance:com.framework.testng.concepts.AppCommons@564fabc8]" name="TestCase3" class="com.framework.testng.concepts.AppCommons"/>
+      </group> <!-- Regression -->
+      <group name="Smoke">
+        <method signature="AppCommons.TestCase3(java.lang.String,java.lang.String)[pri:-1, instance:com.framework.testng.concepts.AppCommons@564fabc8]" name="TestCase3" class="com.framework.testng.concepts.AppCommons"/>
+      </group> <!-- Smoke -->
     </groups>
-    <test started-at="2025-03-24T21:21:42 IST" name="Test" finished-at="2025-03-24T21:21:42 IST" duration-ms="55">
+    <test started-at="2025-03-25T21:00:59 IST" name="Test" finished-at="2025-03-25T21:01:01 IST" duration-ms="2121">
       <class name="com.framework.testng.concepts.AppCommons">
-        <test-method is-config="true" signature="startReporting()[pri:0, instance:com.framework.testng.concepts.AppCommons@8f4ea7c]" started-at="2025-03-24T21:21:42 IST" name="startReporting" finished-at="2025-03-24T21:21:42 IST" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="startReporting()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="startReporting" finished-at="2025-03-25T21:00:59 IST" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startReporting -->
-        <test-method is-config="true" signature="launchBrowserAndApplication(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@8f4ea7c]" started-at="2025-03-24T21:21:42 IST" name="launchBrowserAndApplication" finished-at="2025-03-24T21:21:42 IST" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="launchBrowser(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -26,20 +38,401 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launchBrowserAndApplication -->
-        <test-method signature="TestCase1()[pri:0, instance:com.framework.testng.concepts.AppCommons@8f4ea7c]" started-at="2025-03-24T21:21:42 IST" name="TestCase1" finished-at="2025-03-24T21:21:42 IST" duration-ms="10" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchApplication" finished-at="2025-03-25T21:00:59 IST" depends-on-methods="com.framework.testng.concepts.WebCommons.launchBrowser" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="TestCase1()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="TestCase1" finished-at="2025-03-25T21:00:59 IST" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="closeBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="launchBrowser(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchApplication" finished-at="2025-03-25T21:00:59 IST" depends-on-methods="com.framework.testng.concepts.WebCommons.launchBrowser" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="TestCase1()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="TestCase1" finished-at="2025-03-25T21:00:59 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="closeBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="launchBrowser(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchApplication" finished-at="2025-03-25T21:00:59 IST" depends-on-methods="com.framework.testng.concepts.WebCommons.launchBrowser" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="TestCase1()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="TestCase1" finished-at="2025-03-25T21:00:59 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="closeBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchApplication" finished-at="2025-03-25T21:00:59 IST" depends-on-methods="com.framework.testng.concepts.WebCommons.launchBrowser" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method is-config="true" signature="launchBrowser(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="TestCase1()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="TestCase1" finished-at="2025-03-25T21:00:59 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="closeBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchApplication" finished-at="2025-03-25T21:00:59 IST" depends-on-methods="com.framework.testng.concepts.WebCommons.launchBrowser" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="TestCase1()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="TestCase1" finished-at="2025-03-25T21:00:59 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method is-config="true" signature="launchBrowser(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="closeBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="launchBrowser(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchApplication" finished-at="2025-03-25T21:00:59 IST" depends-on-methods="com.framework.testng.concepts.WebCommons.launchBrowser" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="TestCase1()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="TestCase1" finished-at="2025-03-25T21:00:59 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="closeBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method signature="TestCase1()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="TestCase1" finished-at="2025-03-25T21:00:59 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchApplication" finished-at="2025-03-25T21:00:59 IST" depends-on-methods="com.framework.testng.concepts.WebCommons.launchBrowser" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method is-config="true" signature="launchBrowser(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="closeBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="launchBrowser(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="TestCase1()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="TestCase1" finished-at="2025-03-25T21:00:59 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchApplication" finished-at="2025-03-25T21:00:59 IST" depends-on-methods="com.framework.testng.concepts.WebCommons.launchBrowser" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="closeBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method signature="TestCase1()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="TestCase1" finished-at="2025-03-25T21:00:59 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method is-config="true" signature="launchBrowser(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchApplication" finished-at="2025-03-25T21:00:59 IST" depends-on-methods="com.framework.testng.concepts.WebCommons.launchBrowser" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="closeBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="launchBrowser(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="launchApplication(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchApplication" finished-at="2025-03-25T21:00:59 IST" depends-on-methods="com.framework.testng.concepts.WebCommons.launchBrowser" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[www.amazon.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="TestCase1()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="TestCase1" finished-at="2025-03-25T21:00:59 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase1 -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="closeBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method signature="TestCase2()[pri:2, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="TestCase2" finished-at="2025-03-25T21:01:01 IST" duration-ms="2021" status="FAIL">
+          <exception class="org.testng.internal.thread.ThreadTimeoutException">
             <message>
-              <![CDATA[Test Case 1 failed]]>
+              <![CDATA[Method com.framework.testng.concepts.AppCommons.TestCase2() didn't finish within the time-out 2000]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Test Case 1 failed
-at org.testng.Assert.fail(Assert.java:99)
-at com.framework.testng.concepts.AppCommons.TestCase1(AppCommons.java:10)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+              <![CDATA[org.testng.internal.thread.ThreadTimeoutException: Method com.framework.testng.concepts.AppCommons.TestCase2() didn't finish within the time-out 2000
+at org.testng.internal.MethodInvocationHelper.invokeWithTimeoutWithNewExecutor(MethodInvocationHelper.java:384)
+at org.testng.internal.MethodInvocationHelper.invokeWithTimeout(MethodInvocationHelper.java:283)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:604)
 at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
 at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
 at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
@@ -64,39 +457,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestCase1 -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.framework.testng.concepts.AppCommons@8f4ea7c]" started-at="2025-03-24T21:21:42 IST" name="closeBrowser" finished-at="2025-03-24T21:21:42 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="launchBrowserAndApplication(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@8f4ea7c]" started-at="2025-03-24T21:21:42 IST" name="launchBrowserAndApplication" finished-at="2025-03-24T21:21:42 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[www.amazon.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowserAndApplication -->
-        <test-method signature="TestCase2()[pri:0, instance:com.framework.testng.concepts.AppCommons@8f4ea7c]" started-at="2025-03-24T21:21:42 IST" name="TestCase2" finished-at="2025-03-24T21:21:42 IST" duration-ms="1" status="PASS">
+          </exception> <!-- org.testng.internal.thread.ThreadTimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase2 -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.framework.testng.concepts.AppCommons@8f4ea7c]" started-at="2025-03-24T21:21:42 IST" name="closeBrowser" finished-at="2025-03-24T21:21:42 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="launchBrowserAndApplication(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@8f4ea7c]" started-at="2025-03-24T21:21:42 IST" name="launchBrowserAndApplication" finished-at="2025-03-24T21:21:42 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="launchApplication(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchApplication" finished-at="2025-03-25T21:00:59 IST" depends-on-methods="com.framework.testng.concepts.WebCommons.launchBrowser" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -111,24 +476,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launchBrowserAndApplication -->
-        <test-method signature="TestCase3(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@8f4ea7c]" started-at="2025-03-24T21:21:42 IST" name="TestCase3" data-provider="testcase3" finished-at="2025-03-24T21:21:42 IST" duration-ms="3" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Bharath]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Bharath123]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestCase3 -->
-        <test-method is-config="true" signature="launchBrowserAndApplication(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@8f4ea7c]" started-at="2025-03-24T21:21:42 IST" name="launchBrowserAndApplication" finished-at="2025-03-24T21:21:42 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- launchApplication -->
+        <test-method is-config="true" signature="launchBrowser(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:00:59 IST" name="launchBrowser" finished-at="2025-03-25T21:00:59 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -143,32 +492,44 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launchBrowserAndApplication -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.framework.testng.concepts.AppCommons@8f4ea7c]" started-at="2025-03-24T21:21:42 IST" name="closeBrowser" finished-at="2025-03-24T21:21:42 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:01:01 IST" name="closeBrowser" finished-at="2025-03-25T21:01:01 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method signature="TestCase3(java.lang.String,java.lang.String)[pri:0, instance:com.framework.testng.concepts.AppCommons@8f4ea7c]" started-at="2025-03-24T21:21:42 IST" name="TestCase3" data-provider="testcase3" finished-at="2025-03-24T21:21:42 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[sfjbjw324729]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[jh#%&^$%]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="TestCase3(java.lang.String,java.lang.String)[pri:-1, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:01:01 IST" name="TestCase3" finished-at="2025-03-25T21:01:01 IST" depends-on-methods="com.framework.testng.concepts.AppCommons.TestCase2" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method AppCommons.TestCase3(java.lang.String,java.lang.String)[pri:-1, instance:com.framework.testng.concepts.AppCommons@564fabc8] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method AppCommons.TestCase3(java.lang.String,java.lang.String)[pri:-1, instance:com.framework.testng.concepts.AppCommons@564fabc8] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase3 -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.framework.testng.concepts.AppCommons@8f4ea7c]" started-at="2025-03-24T21:21:42 IST" name="closeBrowser" finished-at="2025-03-24T21:21:42 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="stopReporting()[pri:0, instance:com.framework.testng.concepts.AppCommons@8f4ea7c]" started-at="2025-03-24T21:21:43 IST" name="stopReporting" finished-at="2025-03-24T21:21:43 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="stopReporting()[pri:0, instance:com.framework.testng.concepts.AppCommons@564fabc8]" started-at="2025-03-25T21:01:01 IST" name="stopReporting" finished-at="2025-03-25T21:01:01 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopReporting -->

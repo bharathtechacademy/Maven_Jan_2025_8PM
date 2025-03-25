@@ -8,10 +8,12 @@
       <class name="com.framework.testng.concepts.AppCommons">
         <methods>
           <include name="stopReporting"/>
-          <include name="TestCase1"/>
-          <include name="launchBrowserAndApplication"/>
           <include name="closeBrowser"/>
+          <include name="launchBrowser"/>
+          <include name="TestCase3"/>
           <include name="startReporting"/>
+          <include name="launchApplication"/>
+          <include name="TestCase2"/>
         </methods>
       </class> <!-- com.framework.testng.concepts.AppCommons -->
     </classes>
